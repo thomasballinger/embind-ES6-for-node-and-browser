@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -ex
+
+mjs_file=$1
+
+SED="sed -i.bak"
+
+$SED "s/require(['\"]path['\"])/path/g" $mjs_file
+$SED "s/require(['\"]fs['\"])/fs/g" $mjs_file
+$SED "s/__dirname/new URL(import.meta.url)/g" $mjs_file
+$SED '1s/^/import fs from "fs"\n/' $mjs_file
+$SED '1s/^/import path from "path"\n/' $mjs_file
+rm $mjs_file.bak

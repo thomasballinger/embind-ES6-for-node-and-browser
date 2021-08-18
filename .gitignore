@@ -2,7 +2,8 @@
 Point-native.o
 Point-wasm.o
 out
-out-node.js
+out-node.mjs
+out-node.wasm
 out-web.js
 out-web.wasm
 
