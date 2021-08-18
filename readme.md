@@ -1,6 +1,6 @@
 # Embind example ES6 module for web and node
 
-Until https://github.com/emscripten-core/emscripten/issues/11792 is fixed, there are a few steps to getting an ES6 module working in node and in the browser. This workaround builds two separate sets of files, out-node.{mjs,wasm} and out-web.{js,wasm}.
+Until https://github.com/emscripten-core/emscripten/issues/11792 is fixed, there are a few steps to getting an ES6 module working in node and in the browser. This workaround builds two separate sets of files, out-node.{mjs,wasm} and out-web.{mjs,wasm}.
 
 ---
 

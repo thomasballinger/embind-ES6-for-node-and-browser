@@ -6,7 +6,7 @@
 <body>
   <script type="module">
     (async function(){
-      const {default: modP} = await import('./out-web.js')
+      const {default: modP} = await import('./out-web.mjs')
       console.log(modP);
       const module = await modP();
       const p = new module.Point(10, 12);
