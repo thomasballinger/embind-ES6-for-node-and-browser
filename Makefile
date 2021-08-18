@@ -13,6 +13,8 @@ ifndef EMSCRIPTEN_ENV
 endif
 	em++ -c Point.cpp -o Point-wasm.o
 
+
+
 out-web.js out-web.wasm: binding.cpp Point-wasm.o
 	em++\
 		-s EXPORT_ES6=1\
@@ -22,13 +24,14 @@ out-web.js out-web.wasm: binding.cpp Point-wasm.o
 		Point-wasm.o\
 		-o out-web.js
 
-
 # EXPORT_ES6 doesn't work with node, see https://github.com/emscripten-core/emscripten/issues/11792
+# To get around this, pre_js.js contains a custom locateFile method
+# and post_compile_mjs changes requires to imports
+# and removes the node env detection check for a 'require' function.
 out-node.mjs out-node.wasm: Point-wasm.o
 	em++\
 		-s EXPORT_ES6=1 \
 		--pre-js pre_js.js \
-		-s ASSERTIONS=0\
 		--bind \
 		--no-entry \
 		binding.cpp \

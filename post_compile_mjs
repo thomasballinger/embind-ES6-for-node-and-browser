@@ -11,4 +11,5 @@ $SED "s/require(['\"]fs['\"])/fs/g" $mjs_file
 $SED "s/__dirname/new URL(import.meta.url)/g" $mjs_file
 $SED '1s/^/import fs from "fs"\n/' $mjs_file
 $SED '1s/^/import path from "path"\n/' $mjs_file
+$SED "s/typeof require === 'function'/true/g" $mjs_file
 rm $mjs_file.bak
