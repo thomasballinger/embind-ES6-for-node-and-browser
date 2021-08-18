@@ -4,6 +4,7 @@ Point-wasm.o
 out
 out-node.js
 out-web.js
+out-web.wasm
 
 example-node.js
 example-web.html

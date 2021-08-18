@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <script type="module">
+    (async function(){
+      const {default: modP} = await import('./out-web.js')
+      console.log(modP);
+      const module = await modP();
+      var p = new module.Point(10, 12);
+      console.log(p);
+      const x = p.X();
+      console.log(x);
+    })();
+  </script>
+</body>
+</html>

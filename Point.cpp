@@ -9,3 +9,10 @@ double Point::Xval() const {
 double Point::Yval() const {
 	return y;
 }
+void Point::Set(double x, double y)
+{
+	this->x = x;
+	this->y = y;
+}
+
+
